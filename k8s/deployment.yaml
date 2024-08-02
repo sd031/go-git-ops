@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gobackend
+  labels:
+    app: gobackend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gobackend
+  template:
+    metadata:
+      labels:
+        app: gobackend
+    spec:
+      containers:
+        - name: gobackend
+          image: 12345678910.dkr.ecr.us-west-2.amazonaws.com/go_app:44u691ac9a7i9e5488202a030dbccd28a50ccb34
+          ports:
+            - containerPort: 8000
+          imagePullPolicy: Always
