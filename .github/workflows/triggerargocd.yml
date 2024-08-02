@@ -14,6 +14,6 @@ jobs:
         with:
           valueFile: 'k8s/deployment.yaml'
           propertyPath: 'spec.template.spec.containers[0].image'
-          value: 12345678910.dkr.ecr.ap-south-1.amazonaws.com/${{ github.event.client_payload.image }}
+          value: 12345678910.dkr.ecr.us-west-2.amazonaws.com/${{ github.event.client_payload.image }}
           branch: main
           message: "Update Image Version to ${{ github.event.client_payload.image }}"
